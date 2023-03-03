@@ -36,14 +36,16 @@ We start by importing everything that we will need (we will be relying on Pytorc
     # some data utilities
     # we need one dataloader to train an online linear classifier
     # (don't worry, the rest of the model has no idea of this classifier, so it doesn't use label info)
-    from solo.utils.classification_dataloader import prepare_data as prepare_data_classification
+    from solo.data.classification_dataloader import (
+        prepare_data as prepare_data_classification,
+        prepare_transforms,
+    )
 
     # and some utilities to perform data loading for the method itself, including augmentation pipelines
-    from solo.utils.pretrain_dataloader import (
+    from solo.data.pretrain_dataloader import (
         prepare_dataloader,
         prepare_datasets,
         prepare_n_crop_transform,
-        prepare_transform,
     )
 
 
